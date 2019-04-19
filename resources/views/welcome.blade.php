@@ -79,10 +79,10 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                   Daily Task App
+                    Laravel
                 </div>
 
-              
+                
             </div>
         </div>
     </body>

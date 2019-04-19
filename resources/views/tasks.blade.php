@@ -11,46 +11,64 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <div class="container">
-    	<div class="text-center">
-    			<h1>Daily Tasks</h1>
-	    			<div class="row">
-			    				<div class="col-md-12">
-			    						@foreach($errors->all() as $error)
-			    							<div class="alert alert-danger" role="alert">
-			    								{{$error}}
-			    							</div>
+    
+         <div class="container">
+           <div class="text-center">
+             <br><h1>Daily Task</h1>
+             <div class="row">
+               <div class="col-md-12">
 
-			    						@endforeach
+                @foreach($errors->all() as $error)
+                  <div class="alert alert-danger" role="alert">
+                    {{$error}}
+                  </div>
 
-			    					<form method="post" action="/saveTask">
-			    						{{csrf_field()}}
-				    					<input type="text" class="form-control" name="task" placeholder="Input your task"><br>
-				    					<input type="submit" class="btn btn-primary" name="submit" value="save">
-				    					<input type="button" class="btn btn-warning" name="clear" value="clear">
-			    					</form>
-			    					<br><br>
-			    					<table class="table table-dark">
-			    					<tr>
-			    						<th>ID</th>
-			    						<th>Task</th>
-			    						<th>Completed</th>
-			    					</tr>
-			    			<!--		@foreach($tasks as $task)
-			    					<tr>
-			    						<td>{{$task->id}}</td>
-			    						<td>{{task->task}}</td>
-			    						<td>{{$task->iscompleted}}</td>
+                @endforeach
+                <form method="post" action="/saveTask">
+                  {{csrf_field()}}
+                 <input type="text" name="task" class="form-control" placeholder="Enter your task here">
+                  <input type="submit" class="btn btn-dark" name="submit"> 
+                  <input type="" name="" class="btn btn-warning" value="CLEAR">
+                
+
+                 </form>
+                 <br><br>
+                 <TABLE class="table table-dark">
+                   <tr>
+                     <th>ID</th>
+                     <th>Task</th>
+                     <th>Completed</th>
+                     <th>Action</th>
+
+                   </tr>
+                  @foreach($tasks as $task)
+                   <tr>
+                     <td> {{$task->id}} </td>
+                     <td> {{$task->task}} </td>
+                     <td> 
+                     @if($task->iscompleted)
+                     <button class="btn btn-success">Completed</button> 
+                     @else
+                     <button class="btn btn-warning ">Not Completed</button>
+                     @endif
+                     </td>
+                     <td>
+                    @if(!$task->iscompleted)
+                       <a href="/markascompleted/{{$task->id}}" class="btn btn-primary">mark as completed</a>
+                    @else
+                        <a href="/markasnotcompleted/{{$task->id}}" class="btn btn-danger">mark as not completed</a>
+                    @endif
+                     </td>
+                   </tr>
+                   @endforeach
+
+                 </TABLE>
+               </div>
+             </div>
+           </div>
+         </div>
 
 
-			    					</tr>
-			    					@endforeach -->
-			    					</table>
-			    				</div>
-	    			</div>
-
-    	</div>
-    </div>
-
+   
   </body>
 </html>
