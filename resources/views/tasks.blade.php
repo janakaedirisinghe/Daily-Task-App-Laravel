@@ -28,7 +28,7 @@
                   {{csrf_field()}}
                  <input type="text" name="task" class="form-control" placeholder="Enter your task here">
                   <input type="submit" class="btn btn-dark" name="submit"> 
-                  <input type="" name="" class="btn btn-warning" value="CLEAR">
+                  <input type="submit" name="" class="btn btn-warning" value="CLEAR">
                 
 
                  </form>

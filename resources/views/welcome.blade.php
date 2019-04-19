@@ -11,6 +11,11 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <style>
             html, body {
                 background-color: #fff;
@@ -79,9 +84,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Daily Task App
                 </div>
-
+              
+                <br>
+                <a href="/tasks" class="btn btn-primary">View Tasks</a>
+                <div style="font-size: 20px;font-weight: 600;position: fixed;left: 0;bottom: 0;width:100%">by Janaka Edirisinghe</div>
                 
             </div>
         </div>

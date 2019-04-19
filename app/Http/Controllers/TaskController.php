@@ -66,7 +66,8 @@ class TaskController extends Controller
       $data=Task::find($id);
       $data->task = $task ;
       $data->save();
-      return view('/tasks')->with('tasks',$data);
+      $datas=Task::all();
+      return view('/tasks')->with('tasks',$datas);
 
    }
 }
