@@ -15,7 +15,8 @@
 <br><br><br><br>
     <div class="container">
       <div class="text-center">
-        <form action="#" method="post">
+        <form action="/updatetasks" method="post">
+          {{csrf_field()}}
           <input type="text" class="form-control" name="task" value="{{$taskdata->task}}">
           <input type="hidden" name="id" value="{{$taskdata->id}}">
           <input type="submit" class="btn btn-warning" name="submit" value="Update">
