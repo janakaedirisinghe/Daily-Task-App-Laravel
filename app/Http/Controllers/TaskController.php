@@ -21,7 +21,7 @@ class TaskController extends Controller
    			$task->save();
    			$data=Task::all();
    			//dd($data);
-   			return view('tasks')->with('tasks',$data);
+   			return redirect('tasks')->with('tasks',$data);
    }
 
 
@@ -54,7 +54,7 @@ class TaskController extends Controller
 
    public function UpdateTaskView($id){
       $task=Task::find($id);
-      return view('updatetask')->with('taskdata',$task);
+      return redirect('updatetask')->with('taskdata',$task);
 
    }
 
@@ -67,7 +67,8 @@ class TaskController extends Controller
       $data->task = $task ;
       $data->save();
       $datas=Task::all();
-      return view('/tasks')->with('tasks',$datas);
+      //return view('tasks')->with('tasks',$datas);
+      return redirect('tasks')->with('tasks',$datas);
 
    }
 }
