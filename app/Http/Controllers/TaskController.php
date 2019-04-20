@@ -54,7 +54,7 @@ class TaskController extends Controller
 
    public function UpdateTaskView($id){
       $task=Task::find($id);
-      return redirect('updatetask')->with('taskdata',$task);
+      return view('updatetask')->with('taskdata',$task);
 
    }
 
