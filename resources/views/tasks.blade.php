@@ -24,11 +24,11 @@
                   </div>
 
                 @endforeach
-                <form method="post" action="/saveTask">
+                <form method="post" action="/saveTask" name='tasks'>
                   {{csrf_field()}}
                  <input type="text" name="task" class="form-control" placeholder="Enter your task here">
                   <input type="submit" class="btn btn-dark" name="submit"> 
-                  <input type="submit" name="" class="btn btn-warning" value="CLEAR">
+                  <input type="button" name="" class="btn btn-warning" value="CLEAR" onclick="clearFunction()">
                 
 
                  </form>
@@ -72,6 +72,11 @@
          </div>
 
 
-   
+   <script type="text/javascript">
+      function clearFunction(){
+        document.tasks.task.value=' ';
+      }
+
+   </script>
   </body>
 </html>
