@@ -68,6 +68,22 @@
             }
         </style>
     </head>
+<?php 
+function getUserIpAddr(){
+    if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+        //ip from share internet
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+        //ip pass from proxy
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    }else{
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
+    return $ip;
+}
+
+ ?>
+
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
@@ -88,7 +104,14 @@
               
                 <br>
                 <a href="/tasks" class="btn btn-primary">View Tasks</a>
-                <div style="font-size: 20px;font-weight: 600;position: fixed;left: 0;bottom: 0;width:100%">by Janaka Edirisinghe</div>
+                <div style="font-size: 20px;font-weight: 600;position: fixed;left: 0;bottom: 0;width:100%">by Janaka Edirisinghe | 
+
+                    <?php 
+                            echo 'User IP - '.getUserIpAddr();
+
+                     ?>
+
+                </div>
                 
             </div>
         </div>
