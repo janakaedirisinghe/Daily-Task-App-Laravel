@@ -3,6 +3,6 @@ public function(){
 	var y = document.form[0].element[1].value;
 	var z = document.form[0].element[2].value;
 
-	 var salary = <?php ?>
+	 var salary = <?php echo $salary; ?>;
 
 }
