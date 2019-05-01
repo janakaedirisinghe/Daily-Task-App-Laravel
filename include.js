@@ -13,3 +13,7 @@ public function(){
 
 }
 
+
+<?php 
+	$_SESSION['id'] = $id;
+?> 
