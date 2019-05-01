@@ -4,5 +4,6 @@ public function(){
 	var z = document.form[0].element[2].value;
 
 	 var salary = <?php echo $salary; ?>;
+	 var discount = <?php ?>;
 
 }
